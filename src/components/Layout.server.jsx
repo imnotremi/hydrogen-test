@@ -26,7 +26,7 @@ export default function Layout({children}) {
             }}
         />
 
-        <header className="  ">
+        <header className="absolute">
 
 
             <div className="text-center">
