@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    main {
-        background: #fafafc;
-    }
-}
+
+
+/* body {
+   
+} */
 
 /*
 

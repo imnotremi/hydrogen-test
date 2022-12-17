@@ -54,53 +54,29 @@ function ProductForm( { product } ) {
                 </legend>
 
                 {values.map((value) => {
-                  
-                  const id = `option-${name}-${value}`;
-                  const checked = setSelectedOption[name] === value;
- 
-                  const [bgSelected, setBgSelected] = useState(false);
+                const id = `option-${name}-${value}`;
+                const checked = selectedOptions[name] === value;
 
-                  const handleClick = () => {
-                      setBgSelected(!bgSelected);
-                  }
-
-                  const handleSelected = () => {
-                    setSelectedOption(name, value);
-                    if (bgSelected === true) {
-                      setBgSelected(false);
-                      handleClick()
-                    } else {
-                      setBgSelected(true);
-                      handleClick()
-                     }
-                    
-                  }
-
-
- 
-                  return (
-                    <div key={id} className="product-option-value text-left">
-                      <div 
-                        type="button" 
-                        checked={checked}
-                        name={name}
-                        value={value}
-                        id={id}
-                       // onChange={() =>setSelectedOption(name, value)}
-                        className=""
-                      />
-                      <label 
-                        htmlFor={id}
-                        //onClick={handleClick}
-                        className={bgSelected ? "bg-blue-800" : "bg-blue-200"}
-                        onClick={handleSelected}
-
-                      >{value}</label>
-
-
-                    </div>
-                  )
-                })}
+                return (
+                  <div key={id} className="product-option-value text-left">
+                    <div
+                      type="button"
+                      checked={checked}
+                      name={name}
+                      value={value}
+                      id={id}
+                      className=""
+                    />
+                    <label
+                      htmlFor={id}
+                      className={checked ? "bg-slate-500 rounded-full p-2 cursor-pointer" : "bg-slate-200 rounded-full p-2 cursor-pointer"}
+                      onClick={() => setSelectedOption(name, value)}
+                    >
+                      {value}
+                    </label>
+                  </div>
+                );
+              })}
 
               </div>
             )
@@ -122,53 +98,67 @@ function ProductForm( { product } ) {
 /* SAVE */
 
 
-// {values.map((value) => {
-                  
-//   const id = `option-${name}-${value}`;
-//   const checked = setSelectedOption[name] === value;
 
-//   const [bgSelected, setBgSelected] = useState(false);
+  // {values.map((value) => {
+                    
+  //   const id = `option-${name}-${value}`;
+  //   const checked = setSelectedOption[name] === value;
 
-//   const handleClick = () => {
-//       setBgSelected(!bgSelected);
-//   }
+  //   const [bgSelected, setBgSelected] = useState(false);
 
-//   const handleSelected = () => {
-//     setSelectedOption(name, value);
-//     if (bgSelected === true) {
-//       setBgSelected(false);
-//       handleClick()
-//     } else {
-//       setBgSelected(true);
-//       handleClick()
-//      }
-    
-//   }
+  //   const handleClick = () => {
+  //       setBgSelected(!bgSelected);
+  //   }
 
-
-
-//   return (
-//     <div key={id} className="product-option-value text-left">
-//       <div 
-//         type="button" 
-//         checked={checked}
-//         name={name}
-//         value={value}
-//         id={id}
-//        // onChange={() =>setSelectedOption(name, value)}
-//         className=""
-//       />
-//       <label 
-//         htmlFor={id}
-//         //onClick={handleClick}
-//         className={bgSelected ? "bg-blue-800" : "bg-blue-200"}
-//         onClick={handleSelected}
-
-//       >{value}</label>
+  //   const handleSelected = () => {
+  //     setSelectedOption(name, value);
+  //     if (bgSelected === true) {
+  //       setBgSelected(false);
+  //       handleClick()
+  //     } else {
+  //       setBgSelected(true);
+  //       handleClick()
+  //      }
+      
+  //   }
 
 
-//     </div>
-//   )
-// })}
 
-// </div>
+  //   return (
+  //     <div key={id} className="product-option-value text-left">
+  //       <div 
+  //         type="button" 
+  //         checked={checked}
+  //         name={name}
+  //         value={value}
+  //         id={id}
+  //       // onChange={() =>setSelectedOption(name, value)}
+  //         className=""
+  //       />
+  //       <label 
+  //         htmlFor={id}
+  //         //onClick={handleClick}
+  //         className={bgSelected ? "bg-blue-800" : "bg-blue-200"}
+  //         onClick={handleSelected}
+
+  //       >{value}</label>
+
+
+  //     </div>
+  //   )
+  // })}
+
+  // </div>
+  // )
+  // })}
+  // </div>
+
+  // <AddToCartButton disabled={isOutOfStock} className='add-to-cart font-bold text-md p-2 rounded-3xl mt-3 bg-slate-300 hover:bg-slate-400'>
+  // {isOutOfStock ? 'Out of stock' : 'Add to cart'}
+  // </AddToCartButton>
+
+  // </div>
+
+  // )
+  // }
+
