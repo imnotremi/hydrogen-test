@@ -14,6 +14,8 @@ export default function Layout({children}) {
 
   //console.log("data: ", data); 
 
+
+
     return ( 
 
     <>
@@ -26,10 +28,10 @@ export default function Layout({children}) {
             }}
         />
 
-        <header className="absolute">
+        <header className="">
 
 
-            <div className="text-center">
+            <div className="text-center bg-transparent">
 
                 <div className=" container flex items-center justify-between py-4 ">
 
@@ -76,6 +78,7 @@ export default function Layout({children}) {
         <main> 
             <Suspense>{children}</Suspense>
         </main> 
+
 
 
     </>

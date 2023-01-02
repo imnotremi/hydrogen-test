@@ -5,17 +5,16 @@ import {
   ProductPrice,
   AddToCartButton
 } from '@shopify/hydrogen'
-import { useState } from 'react';
 
 export default function ProductDetails( { product } ) {
 
   return (
     <ProductOptionsProvider data={product}>
-    <div className='grid lg:grid-cols-2 justify-between items-center'>
-      <div className='p-[4rem]'>
+    <div className='grid lg:grid-cols-2 place-items-center'>
+      <div className='p-[2rem] transform transition duration-500 hover:scale-105'>
         <Image data={product.media.nodes[0].image} className="rounded-3xl w-fit" alt={product.media.nodes[0].image.altText}/>
       </div>
-      <div className='items-center'>
+      <div className='transform transition duration-500 hover:scale-105'>
         <ProductForm product={product}/>
       </div>
     </div>
@@ -33,7 +32,7 @@ function ProductForm( { product } ) {
 
 
     return (
-      <div className='drop-shadow-xl bg-white rounded-xl p-10 w-7/12'>
+      <div className='drop-shadow-2xl bg-white rounded-xl p-10 w-fit'>
         <h1 className='font-bold text-3xl'>{product.title}</h1>
         <ProductPrice 
           className="font-light text-lg pb-3"  
@@ -69,7 +68,7 @@ function ProductForm( { product } ) {
                     />
                     <label
                       htmlFor={id}
-                      className={checked ? "bg-slate-500 rounded-full p-2 cursor-pointer" : "bg-slate-200 rounded-full p-2 cursor-pointer"}
+                      className={checked ? "bg-blue-gray-100 rounded-full p-2 cursor-pointer" : "bg-slate-200 rounded-full p-2 cursor-pointer"}
                       onClick={() => setSelectedOption(name, value)}
                     >
                       {value}
@@ -83,7 +82,7 @@ function ProductForm( { product } ) {
           })}
         </div>
 
-        <AddToCartButton disabled={isOutOfStock} className='add-to-cart font-bold text-md p-2 rounded-3xl mt-3 bg-slate-300 hover:bg-slate-400'>
+        <AddToCartButton disabled={isOutOfStock} className='add-to-cart font-bold text-md p-2 rounded-3xl mt-3 bg-gray-300 hover:bg-gray-400'>
           {isOutOfStock ? 'Out of stock' : 'Add to cart'}
         </AddToCartButton>
 

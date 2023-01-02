@@ -12,16 +12,15 @@ export default function RecommendedSection(current) {
     const { data: { products:{nodes} }, } = data; 
 
 
-
   return (
 
 
       <div className="py-7 px-14">
-          <h1 className="font-extrabold text-2xl">Recommended Products</h1>
+          <h1 className="font-extrabold text-2xl">Recommended Products Page</h1>
 
           <div className="flex items-start">
             {nodes.map(nodes => (
-              <div className="px-5">
+              <div className="px-5 transform transition duration-500 hover:scale-105">
                 <RecommendedProductCard product={nodes} key={nodes.id}></RecommendedProductCard>
               </div>
             ))}

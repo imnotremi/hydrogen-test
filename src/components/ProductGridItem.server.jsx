@@ -13,7 +13,7 @@ export default function ProductCard ({product}) {
                 <Image alt={product.featuredImage.altText} data={product.featuredImage} className="rounded-3xl"/>
             </Link>
 
-            <div className="product-grid-item-title">
+            <div className="product-grid-item-title font-bold pt-1">
                 {product.title}
             </div>
 

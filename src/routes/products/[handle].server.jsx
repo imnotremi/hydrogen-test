@@ -1,8 +1,10 @@
 import { useShopQuery, gql, CacheLong, useRouteParams, Seo } from "@shopify/hydrogen"
 import { Suspense } from "react";
+import Footer from "../../components/Footer.client";
 import Layout from "../../components/Layout.server"
 import ProductDetails from "../../components/ProductDetails.client"
 import RecommendedSection from "../../components/Recommended.server"
+
 
 export default function Product() {
 
@@ -21,15 +23,17 @@ export default function Product() {
             <Suspense>
                 <Seo type="product" data={product}/>
             </Suspense>
-            <div className="container pt-10">
+            <div className="container pt-10">  
                 <ProductDetails product={product}/>
             </div>
 
-            <div className="text-center pb-14">
-                <div className="product-description pt-4 " dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
+            <div className=" place-content-center pb-14 pt-10 mx-16">
+                <h1 className="text-center font-bold text-xl pb-5">Description</h1>
+                <div className="transform transition duration-500 hover:scale-105 product-description container p-5 rounded-xl text-center max-w-fit shadow-2xl" dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></div>
             </div>
 
             <RecommendedSection current={product.id} product={product}/>
+        <Footer/>
         </Layout>
     ) 
 }

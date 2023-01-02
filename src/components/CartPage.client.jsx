@@ -96,7 +96,7 @@ function CartLineItem() {
         <div key={lineId} className="shadow-2xl items-center rounded-3xl lg:grid lg:grid-cols-4 lg:rounded-full ">
 
         
-            <div className='items-center lg:pl-20 lg:py-10 lg:pr-10 lg:w-auto w-auto px-5 py-5'>
+            <div className='items-center lg:pl-20 lg:py-10 lg:pr-10 w-auto px-5 py-5'>
                 <Image className='rounded-3xl lg:overflow-clip' data={image}/>
             </div>
 
